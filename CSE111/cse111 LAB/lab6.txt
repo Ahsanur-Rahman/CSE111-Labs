@@ -1,0 +1,365 @@
+//task1
+public class Assignment {
+    int tasks;
+    String difficulty;
+    Boolean submission=false;
+    void printDetails(){
+        System.out.println("Number of tasks: "+this.tasks);
+        System.out.println("Difficulty level: "+this.difficulty);
+        System.out.println("Submission required: "+this.submission);
+
+    }
+
+    void makeOptional(){
+        if(this.submission==true){
+            System.out.println("Assignment will not require submission");
+
+        }
+        else if(this.submission==false) {
+            System.out.println("Submission is already not required");
+        }
+
+    }
+}
+
+
+//task 2
+public class Shelf {
+    int capacity;
+    int Nbooks;
+
+
+    void showDetails() {
+        System.out.println("Shelf capacity: " + this.capacity);
+        System.out.println("Number of books: " + this.Nbooks);
+
+    }
+
+    void addBooks(int n) {
+
+        if (capacity > this.Nbooks+n || capacity==0) {
+            if (capacity == 0) {
+                System.out.println("Zero capacity. Cannot add books.");
+            } else {
+                System.out.println("books added to shelf");
+                this.Nbooks+=n;
+
+            }
+        }
+        else{
+            System.out.println("Exceeds capacity");
+        }
+    }
+}
+
+//task3
+
+public class LightController {
+    String status="OFF";
+    int level=0;
+
+    void showLightStatus(){
+        System.out.println("Light status: "+this.status);
+        System.out.println("Brightness Level:  "+this.level);
+    }
+    void adjustBrightness(int level){
+
+        if (this.status == "OFF") {
+            System.out.println("Please turn on the light first!");
+        } else if (this.status=="ON") {
+            if(this.level+level>10){
+                System.out.println("Brightness out of range. Set between 0 to 10.");
+            }
+            else{
+                this.level+=level;
+                System.out.println("Brightness adjusted.");
+            }
+
+        }
+    }
+
+    void switchLight(){
+        if(this.status=="OFF"){
+            this.status="ON";
+            this.level+=1;
+            System.out.println("Lights are now ON.");
+        }
+        else if(this.status=="ON"){
+            this.status="OFF";
+            System.out.println("Lights are now OFF");
+        }
+    }
+    String resetSettings(){
+        this.level=0;
+        return ("Light settings have been reset.");
+    }
+
+}
+
+//task4
+
+public class ChickenBurger {
+    String bun="Sesame" ;
+    int price=200;
+    String sauceOption="Less";
+    String spiceLevel="Not Set";
+    String[] items;
+    ChickenBurger(){
+        items=new String[]{"Mild","Spicy","Naga","Extreme"};
+
+    }
+    String serveBurger(){
+        if(this.spiceLevel=="Not Set"){
+           return( "Cannot serve now. Customize Spice Level first.");
+        }
+        else{
+            return ("The burger is being served:-\nBun Type: "+this.bun+"\nPrice: "+this.price+"\nSauce Option: "+this.sauceOption+"\nSpice Level: "+this.spiceLevel);
+
+        }
+    }
+
+    void customizeSpiceLevel(String spiceName){
+        int flag=0;
+        for(int i= 0;i<this.items.length;i++){
+            if(this.items[i].equals(spiceName)){
+                flag=1;
+                this.spiceLevel=spiceName;
+                System.out.println("Spice Level set to "+this.spiceLevel);
+                break;
+            }
+
+        }
+        if(flag==0){
+            System.out.println("This spice level is unavailable.\n"+"Spice level set to Spicy.");
+        }
+
+    }
+}
+
+//task5 
+
+
+import javax.xml.namespace.QName;
+
+public class MobilePhone {
+    int Contacts=0;
+    Contact[] ContactList;
+    int count=0;
+
+    void setContactCapacity(int capacity){
+        this.Contacts=capacity;
+        ContactList=new Contact[capacity];
+    }
+    void addContact(String name, int number){
+        if(Contacts>count){
+            ContactList[count]=new Contact(name,number);
+            count++;
+            System.out.println("The contact of "+name+" is added.");
+        }
+        else{
+            System.out.println("Storage Full!!");
+        }
+    }
+
+    void makeCall(int number){
+        for(int i=0;i<count;i++){
+            if(ContactList[i].getNumber()==number){
+                System.out.println("Calling "+number+" . . .");
+                System.out.println("Calling "+ContactList[i].getName()+" . . .");
+
+                break;
+            }
+
+        }
+
+    }
+
+    void details(){
+        System.out.println("Total Contacts: "+this.count);
+        System.out.println("Contact List:");
+        for(int i=0;i<count;i++){
+            System.out.println(ContactList[i].getName()+":"+ContactList[i].getNumber());
+        }
+    }
+
+    class Contact{
+        int number;
+        String name;
+        Contact(String name,int number){
+            this.name=name;
+            this. number=number;
+        }
+        String getName(){
+            return name;
+        }
+        int getNumber(){
+            return number;
+        }
+    }
+}
+
+//task6
+
+
+public class Course{
+    String name;
+    String Code;
+    String[] syllabusList=new String[4];
+    int count=0;
+
+    void createCourse(String name , String code){
+        this.Code=code;
+        this.name=name;
+    }
+    void addOneContent(String name){
+        if(count<4){
+            syllabusList[count]=name;
+            count++;
+            System.out.println(this. name+" was added.");
+        }
+        else{
+            System.out.println("Cannot add more content");
+        }
+    }
+    void addTwoContent(String name1,String name2 ){
+        if(count<=2){
+            syllabusList[count]=name1;
+            count++;
+            System.out.println(name1+" was added.");
+            syllabusList[count]=name2;
+            count++;
+            System.out.println(name2+" was added.");
+        }
+        else if(count==3){
+            syllabusList[count]=name1;
+            count++;
+            System.out.println(name1+" was added.");
+
+        }
+        else{
+            System.out.println("Cannot add more content");
+        }
+    }
+    void printDetails(){
+        System.out.println("Course Details:");
+        System.out.println("Course name: "+this.name);
+        System.out.println("Course Code: "+this.Code);
+        System.out.println("Course Syllabus:");
+
+            if(count==0){
+                System.out.println("No content yet");
+            }
+            else{
+                for (int i=0;i<count;i++){
+                    if(i!=count-1){
+                        System.out.print(syllabusList[i]+" ,");
+                    }
+                    else{
+                        System.out.print(syllabusList[i]);
+                    }
+
+                }
+            }
+
+    }
+}
+
+
+
+//task 7
+
+
+
+public class Course2{
+    String name;
+    String Code;
+    String[] syllabusList=new String[4];
+    int count;
+
+    void createCourse(String name , String code){
+        this.Code=code;
+        this.name=name;
+    }
+    void addContent(String name){
+        if(count<4){
+            syllabusList[count]=name;
+            count++;
+            System.out.println(this. name+" was added.");
+        }
+        else{
+            System.out.println("Cannot add more content");
+        }
+    }
+    void addContent(String name1,String name2 ){
+        if(count<=2){
+            syllabusList[count]=name1;
+            count++;
+            System.out.println(name1+" was added.");
+            syllabusList[count]=name2;
+            count++;
+            System.out.println(name2+" was added.");
+        }
+        else if(count==3){
+            syllabusList[count]=name1;
+            count++;
+        }
+        else{
+            System.out.println("Cannot add more content");
+        }
+    }
+    void printDetails() {
+        System.out.println("Course Details:");
+        System.out.println("Course name: " + this.name);
+        System.out.println("Course Code: " + this.Code);
+        System.out.println("Course Syllabus:");
+
+        if (count == 0) {
+            System.out.println("No content yet");
+        } else {
+            for (int i = 0; i < count; i++) {
+                if (i != count - 1) {
+                    System.out.print(syllabusList[i] + " ,");
+                } else {
+                    System.out.print(syllabusList[i]);
+                }
+
+            }
+
+        }
+    }
+}
+
+
+//task8
+
+
+public class Shape {
+     String Name;
+     double area;
+
+    public void setParameters(String shapeName,double radius) {
+        this.Name=shapeName;
+        if (shapeName.equalsIgnoreCase("Circle")) {
+            this.area=Math.PI*Math.pow(radius, 2);
+        }
+    }
+
+    public void setParameters(String shapeName,double base,double height) {
+        this.Name=shapeName;
+        if (shapeName.equalsIgnoreCase("Triangle")) {
+            this.area=0.5*base*height;
+        }
+    }
+
+    public void setParameters(String shapeName,double a,double b,double height) {
+        this.Name=shapeName;
+        if (shapeName.equalsIgnoreCase("Trapezium")) {
+            this.area=0.5*(a+b)*height;
+        }
+    }
+
+    public String details() {
+        return "Shape Name: "+Name+"\nArea: "+String.format("%.2f",area);
+    }
+}
+

@@ -1,0 +1,270 @@
+//task8
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc= new Scanner(System.in);
+        System.out.println("write student id");
+        String Student_id= sc.nextLine();
+
+        char first=Student_id.charAt(0);
+        char second=Student_id.charAt(1);
+
+        if(first=='1'){
+            System.out.printf("Student joined BRAC in Spring %c%c",first,second);
+        } else if (first=='2') {
+            System.out.printf("Student joined BRAC in Fall %c%c",first,second);
+        } else if (first=='3') {
+            System.out.printf("Student joined BRAC in Summer %c%c",first,second);
+        }
+        sc.close();
+    }
+}
+
+//task1
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int a=1;
+        System.out.println(a);
+        int b=2;
+        System.out.println(a+b);
+        System.out.println(a*b);
+        System.out.println(a/b);
+        double c=4.0;
+        System.out.println(c);
+        int d=5;
+        System.out.println(c+d);
+        System.out.println(c*d);
+        System.out.println(c/d);
+//        String e="cse111 ";
+        int e=111;
+        System.out.println(e);
+        String f=" is fun";
+        System.out.println(e+f);
+        System.out.println("write an integer");
+        int g=sc.nextInt();
+        System.out.println(g);
+        System.out.println("write an integer");
+        int h=sc.nextInt();
+        System.out.println(g+h);
+    }
+}
+
+//task2
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        int a=3;
+        int b=4;
+        int c=a;
+        a=b;
+        b=c;
+        System.out.printf("a value was 3 now %d b value was 4 now %d",a,b);
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        int a=3;
+        int b=4;
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        System.out.printf("a value was 3 now %d b value was 4 now %d",a,b);
+    }
+}
+
+//task3
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Write student id");
+        String Student_id=sc.nextLine();
+        char last= Student_id.charAt(Student_id.length()-1);
+        char oneBeforeLast=Student_id.charAt(Student_id.length()-2);
+        System.out.println(last);
+        System.out.println(oneBeforeLast);
+    }
+}
+
+//task4
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("write an integer value");
+        int n=sc.nextInt();
+
+    multi(n,1);
+    }
+    public static void multi(int n,int i){
+        if(i>10){
+            return ;
+        }
+        else{
+            int result=n*i;
+            System.out.println(n +" x "+i+" = "+result);
+            multi(n,i+1);
+        }
+    }
+}
+
+//task5
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Write an Integer");
+        int a=sc.nextInt();
+        System.out.println("Write an Integer");
+        int b=sc.nextInt();
+        System.out.println("Write an Integer");
+        int c=sc.nextInt();
+        if(a>b && a>c){
+            System.out.println("Largest number "+a);
+        }
+        else if (b>a && b>c){
+            System.out.println("Largest number "+b);
+        }else{
+            System.out.println("Largest number "+c);
+        }
+    }
+}
+
+//task6
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write a year");
+        int year = sc.nextInt();
+        if (year % 100 == 0 && year % 400 == 0) {
+            System.out.println("leap");
+        }
+        else if (year%100==0) {
+        System.out.println("not");
+
+        }
+        else if (year % 4 == 0) {
+            System.out.println("leap");
+        }
+        else {
+            System.out.println("not");
+        }
+    }
+}
+
+//task7
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write an Integer");
+        int a = sc.nextInt();
+        if(a%5==0 && a%7==0){
+            System.out.println("Divisible by Both");
+        }
+        else if(a%5==0){
+            System.out.println("Invalid: Divisible by 5 Only");
+        }
+
+        else if(a%7==0){
+            System.out.println("Invalid: Divisible by 7 Only");
+        }
+
+
+        else{
+                System.out.println("No");
+            }
+
+    }
+}
+
+//task8
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc= new Scanner(System.in);
+        System.out.println("write student id");
+        String Student_id= sc.nextLine();
+
+        char first=Student_id.charAt(0);
+        char second=Student_id.charAt(1);
+
+        if(first=='1'){
+            System.out.printf("Student joined BRAC in Spring %c%c",first,second);
+        } else if (first=='2') {
+            System.out.printf("Student joined BRAC in Fall %c%c",first,second);
+        } else if (first=='3') {
+            System.out.printf("Student joined BRAC in Summer %c%c",first,second);
+        }
+        sc.close();
+    }
+}
+
+//task9
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write your CGPA");
+        double CGPA = sc.nextDouble();
+        System.out.println("Write your completed Credit");
+        int credit = sc.nextInt();
+        if (credit >= 30 && CGPA>=3.8){
+           if( CGPA<=3.89){
+               System.out.println("The student is eligible for a waiver of 25 percent");
+           }
+           else if(CGPA>=3.90 && CGPA<=3.94){
+               System.out.println("The student is eligible for a waiver of 50 percent");
+           }
+           else if(CGPA>=3.95 && CGPA<=3.99){
+               System.out.println("The student is eligible for a waiver of 75 percent");
+           }
+           else if(CGPA==4.00){
+               System.out.println("The student is eligible for a waiver of 100 percent");
+           }
+        } else  {
+            System.out.println("The student is not eligible for a waiver");
+        }
+    }
+}
+
+//task10
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write an Integer");
+        int a=sc.nextInt();
+        if(a%2==0 && a%5==0){
+            System.out.println("Multiple of 2 and 5 both");
+        } else if (a%2==0 || a%5==0) {
+            System.out.println(a);
+        }
+        else {
+            System.out.println("Not a multiple we want");
+        }
+    }
+}
+//task11
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write an Integer");
+        int a=sc.nextInt();
+        if(a<0){
+            System.out.println(2*a);
+        } else if (0<=a && a<2) {
+            System.out.println(a+1);
+        } else if (2<=a && a<5) {
+            System.out.println(Math.pow(a,2)-1);
+        } else if (a>=5) {
+            System.out.println(3*(Math.pow(a,2))+2);
+        }
+    }
+}

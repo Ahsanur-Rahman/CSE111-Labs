@@ -1,0 +1,213 @@
+//task1_a
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+      University uni1=new University();
+      University uni2=new University();
+
+      System.out.println(uni1);
+        System.out.println(uni2);
+        System.out.println(uni1.country);
+        System.out.println(uni2.country);
+        //NO the location of the objects are not same
+    }
+}
+
+//task1_b
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+      University uni1=new University();
+      University uni2=new University();
+      uni1.name="Imperial College London";
+      uni1.country="England";
+      uni2.name="Brac University";
+      uni2.country="Bangladesh";
+      System.out.println(uni1.name);
+        System.out.println(uni1.country);
+        System.out.println(uni2.name);
+    System.out.println(uni1.country);
+        //Instance variable of both obj changed
+    }
+}
+
+//task2
+
+import java.math.*;
+public class Circle {
+    public double radius=5;
+    public double area=Math.PI*Math.pow(radius,2);
+    public double cir= 2*Math.PI*radius;
+}
+
+//task3
+
+public class Student {
+    String name="Bob";
+    int id=1;
+}
+//task4
+public class Vehicle {
+    String type="Car";
+    int wheels=4;
+    String color="White";
+}
+
+//task5
+public class Tournament {
+    String name;
+    String sportsType;
+    int numberOfTeams;
+    String[] teams;
+}
+
+//task6
+public class ImaginaryNumber {
+    int realPart;
+    int imaginaryPart;
+    void printNumber(){
+        System.out.println(this.realPart+" + "+this.imaginaryPart+"i");
+    }
+}
+
+//task7
+public class Cat{
+        String color="White";
+        String action="sitting";
+        void printCat(){
+            System.out.println(color+" cat is "+action);
+        }
+    }
+
+//task8
+public class Bird{
+        String name;
+        int upFromGroud=0;
+        void flyUp(int feet){
+            this.upFromGroud=this.upFromGroud+feet;
+            System.out.println(name+" has flown up "+feet+".");
+        }
+    void flyDown(int feet){
+            if(this.upFromGroud<feet){
+                System.out.println("Parrot cannot fly down "+feet+" feet.");
+            }
+            else{
+                this.upFromGroud=this.upFromGroud-feet;
+                if(upFromGroud==0){
+                    System.out.println(name+" has flown down "+feet+" and landed");
+                }else{
+                    System.out.println(name+" has flown down "+feet+".");
+                }
+
+            }
+        {
+
+        }
+    }
+    void makeNoise(){
+            if(this.name=="Parrot"){
+                System.out.println("Squawk");
+            } else if (this.name=="Eagle") {
+                System.out.println("Squee");
+            }
+
+    }
+    }
+
+//task9
+public class CellPhone{
+    String model="unknown";
+    int numberOfContact;
+    String[] contacts;
+    CellPhone(){
+        this.contacts=new String[3];
+    }
+    void printDetails(){
+        System.out.println("Phone Model "+this.model);
+        System.out.println("Contacts Stored "+numberOfContact);
+        if(numberOfContact!=0){
+            System.out.println("Stored Contacts:");
+        }
+
+        for(int i=0;i<numberOfContact;i++){
+            System.out.println(this.contacts[i]);
+        }
+    }
+    void storeContact(String name){
+        for(int i=numberOfContact;i<contacts.length;i++){
+            this.contacts[i]=name;
+        }
+        numberOfContact++;
+        System.out.println("Contact Stored");
+    }
+    }
+
+//task5
+public class MagicItem {
+    public String name;
+   int level;
+   String[] items;
+   int j=0;
+   int flag=0;
+   void newCharacter(String name){
+       this.name=name;
+       level=0;
+       this.items=new String[3];
+   }
+   void displayInfo(){
+       System.out.println("Character Name: "+this.name);
+       System.out.println("Energy Level: "+this.level);
+       for(int i=0;i<3;i++){
+           System.out.println("item "+(i+1)+": "+this.items[i]);
+       }
+   }
+  void findItem(String item){
+
+
+      if(j==3){
+          System.out.println("All item slots occupied.");
+      }
+      else{
+          System.out.println(this.name+ " found a "+item);
+
+          this.items[j]=item;
+          this.j++;
+      }
+  }
+  void useItem(String item){
+      for(int i=0;i<3;i++){
+          if(this.items[i]!=item){
+              flag=0;
+          }
+          else{
+              flag=1;
+              break;
+          }
+      }
+      if(flag==0){
+          System.out.println("Item not in inventory");
+      }
+      else{
+          if(item=="Elixir"){
+              System.out.println(this.name+" used a "+item);
+              level+=100;
+              System.out.println("Energy Level after using item: "+level);
+              this.items[3-j]=null;
+              j--;
+          }
+          else if(item=="Potion"){
+              System.out.println(this.name+" used a "+item);
+              level+=50;
+              System.out.println("Energy Level after using item: "+level);
+              this.items[3-j]=null;
+              j--;
+
+          }
+      }
+
+  }
+}
+
+
+
+

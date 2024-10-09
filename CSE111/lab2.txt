@@ -1,0 +1,398 @@
+﻿//task1_a
+public class Main {
+    public static void main(String[] args) {
+        int i=2;
+        while(i<=50){
+            System.out.println(i);
+            i+=4;
+        }
+    }
+}
+
+
+//task1_b
+public class Main {
+    public static void main(String[] args) {
+        int i=0;
+        int j=0;
+        while(i<120){
+            i=i+j+1;
+            System.out.println(i);
+            j+=1;
+
+        }
+    }
+}
+
+//task2
+public class Main {
+    public static void main(String[] args) {
+        int i = 2;
+        while (i <= 20) {
+            System.out.println(i);
+            i += 2;
+        }
+        for(int j=i-4;j>=2;j-=2){
+            System.out.println(j);
+        }
+    }
+}
+
+//task3
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=0;
+        int prev_min=0;
+        int prev_max=0;
+        double count = 0;
+        int sum = 0;
+
+        double  avg=0.0;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("give int input");
+            a=sc.nextInt();
+            if (prev_min > a) {
+                prev_min = a;
+            }
+            if(prev_max<a){
+                prev_max=a;
+            }
+            sum+=a;
+            count++;
+        }
+        avg=sum/count;
+        System.out.println("Sum = "+ sum);
+        System.out.println("Minimum = "+ prev_min);
+        System.out.println("Maximum = "+ prev_max);
+        System.out.println("Average = "+ avg);
+    }
+    }
+
+//task4
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=0;
+        int prev_min=1;
+        int prev_max=1;
+        double count = 0;
+        int sum = 0;
+
+        double  avg=0.0;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("give int input");
+            a=sc.nextInt();
+            if(a%2!=0 && a>0) {
+                if (prev_min > a) {
+                    prev_min = a;
+                }
+                if (prev_max < a) {
+                    prev_max = a;
+                }
+                sum += a;
+                count++;
+            }
+        }
+        if(count==0){
+            System.out.println("No odd positive numbers found");
+        }
+        else {
+            avg = sum / count;
+            System.out.println("Sum = " + sum);
+            System.out.println("Minimum = " + prev_min);
+            System.out.println("Maximum = " + prev_max);
+            System.out.println("Average = " + avg);
+        }
+    }
+    }
+
+//task5
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=0;
+        int prev_min=1;
+        int prev_max=1;
+        double count = 0;
+        int sum = 0;
+        int count_zero=0;
+        double  avg=0.0;
+        int i=0;
+        while(i==0){
+            System.out.println("give int input");
+            a = sc.nextInt();
+            if(a==0){
+                count_zero++;
+                if(count_zero==3){
+                    break;
+                }
+            }
+            else {
+                count_zero=0;
+                if (prev_min > a) {
+                    prev_min = a;
+                }
+                if (prev_max < a) {
+                    prev_max = a;
+                }
+                sum += a;
+                count++;
+            }
+        }
+            avg = sum / count;
+            System.out.println("Sum = " + sum);
+            System.out.println("Minimum = " + prev_min);
+            System.out.println("Maximum = " + prev_max);
+            System.out.println("Average = " + avg);
+
+    }
+    }
+
+//task6
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double sum_num_weight=0.0;
+        double sum_weight=0.0;
+        double weight=0.0;
+
+        for(int i=0;i<5;i++){
+            System.out.println("write num");
+            double num=sc.nextDouble();
+            System.out.println("write weight");
+            weight=sc.nextDouble();
+
+            sum_weight+=weight;
+            sum_num_weight+=num*weight;
+        }
+        double w=(sum_num_weight)/sum_weight;
+        System.out.println("Average Weight = “+w);
+    }
+    }
+    
+    //task-7_a
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a = 1;
+        int b = 1;
+        int result = 0;
+        int c = 0;
+        while (result < n) {
+
+            if(a<n){
+                System.out.println(a);
+            }
+            if (b<n){
+                System.out.println(b);
+            }
+            result = a + b;
+            a = result;
+            c = b;
+            b = c + result;
+        }
+    }
+}
+
+//task-7_b
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a = 1;
+        int b = 1;
+        int result = 0;
+        int count=0;
+        int c = 0;
+        while (result < n) {
+
+            if(a<n){
+                System.out.println(a);
+                count+=a;
+            }
+
+            if (b<n){
+                System.out.println(b);
+                count+=b;
+            }
+            result = a + b;
+
+            a = result;
+            c = b;
+            b = c + result;
+        }
+        System.out.println("Sum ="+count);
+    }
+}
+
+    
+    //task-8
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("write first interval");
+        int a=sc.nextInt();
+        System.out.println("write second interval");
+        int b=sc.nextInt();
+        int c=a;
+        int flag=1;
+
+        int count=0;
+        while(c<=b){
+            for(int i=2;i<c;i++){
+                if(c%i==0){
+                    flag=0;
+                }
+            }
+            if(flag==1){
+                count++;
+            }
+            flag=1;
+            c++;
+        }
+        System.out.println("There are "+count+" prime number between "+a+" and "+b);
+    }
+    }
+
+
+//task9_a
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=0;
+        int count=0;
+        while(a!=0){
+            a=a/10;
+            count++;
+
+        }
+        System.out.println(count);
+    }
+    }
+    
+    //task9_b
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        String b=Integer.toString(a);
+        for(int i=0;i<b.length();i++){
+            int digit=(Character.getNumericValue(b.charAt(i)))*7;
+            System.out.println(digit);
+        }
+    }
+    }
+    
+    //task10
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int amount=sc.nextInt();
+        int tk_500=0;
+        int tk_100=0;
+        int tk_50=0;
+        int tk_10=0;
+        int tk_5=0;
+        int tk_1=0;
+        if(amount>=500){
+
+                tk_500 = amount / 500;
+                amount = amount % 500;
+
+        }
+        if(amount>=100){
+            tk_100=amount/100;
+            amount=amount%100;
+        }
+        if(amount>=50){
+            tk_50=amount/50;
+            amount=amount%50;
+        }
+        if(amount>=10){
+            tk_10=amount/10;
+            amount=amount%10;
+        }
+        if(amount>=5){
+            tk_5=amount/5;
+            amount=amount%5;
+        }
+        else {
+            while (amount>0){
+                tk_1++;
+                amount--;
+            }
+        }
+        if(tk_500!=0){
+            System.out.println(tk_500+" 500's note");
+        }
+        if(tk_100!=0){
+            System.out.println(tk_100+" 100's note");
+        }
+        if(tk_50!=0){
+            System.out.println(tk_50+" 50's note");
+        }
+        if(tk_10!=0){
+            System.out.println(tk_10+" 10's note");
+        }
+        if(tk_5!=0){
+            System.out.println(tk_10+" 10's note");
+        }
+        if(tk_1!=0){
+            System.out.println(tk_1+" 1's note");
+        }
+
+    }
+    }
+
+//task11_a
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        for(int i=0;i<a;i++){
+            for(int j=0;j<a;j++){
+                System.out.print("*");
+
+            }
+            System.out.println();
+        }
+    }
+    }
+
+//task11_b
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        for(int i=0;i<a;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print("*");
+
+            }
+            System.out.println();
+        }
+    }
+    }
+
+
+
+
